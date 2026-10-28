@@ -1,27 +1,50 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>تألّقي | من نجمة الحصة؟</title>
-  <style>
-    body {
-      font-family: Tahoma, sans-serif;
-      background: #142b55;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    h1 { color: #f5c75e; }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تألّقي | من نجمة الحصة؟</title>
+<style>
+:root{font-family:Tahoma,Arial,sans-serif;color:#16284a;background:#f5f7ff}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(125deg,#172d59,#314f91);color:white;padding:23px 16px;text-align:center}h1{margin:0;color:#ffdb79;font-size:clamp(25px,4vw,38px)}header p{margin:9px 0 0;font-size:14px}.wrap{max-width:1080px;margin:24px auto;padding:0 14px}.panel{background:white;border:1px solid #dfe5f2;border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:0 5px 20px #1b315010}h2{margin:0 0 15px;font-size:20px}label{font-weight:bold;display:block;margin-bottom:8px}select,textarea,input{width:100%;padding:12px;border:1px solid #b9c6de;border-radius:10px;font:inherit;background:white}textarea{min-height:150px;resize:vertical}button{border:0;border-radius:12px;padding:12px 16px;background:#234e9b;color:white;font:inherit;font-weight:bold;cursor:pointer}button:hover{filter:brightness(1.08)}button:disabled{opacity:.45;cursor:not-allowed}.soft{background:#eaf0fb;color:#234e9b}.gold{background:#e9b743;color:#3a2900}.pink{background:#f7dce9;color:#92365d}.danger{background:#fff0f0;color:#a52c2c}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.controls>*{flex:1;min-width:180px}.stage{text-align:center;background:linear-gradient(145deg,#132955,#253e79);border-radius:20px;color:white;padding:32px 14px;margin:18px 0}.stage .name{font-size:clamp(25px,5vw,47px);font-weight:bold;min-height:65px;display:flex;align-items:center;justify-content:center}.stage .hint{color:#d7e2fa;font-size:14px}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.actions button{min-width:160px}.message{text-align:center;font-size:23px;font-weight:bold;margin:16px 0;min-height:30px}.muted{color:#61718c;font-size:13px;line-height:1.8}.row{display:flex;gap:12px;flex-wrap:wrap}.row>.panel{flex:1;min-width:280px}.stats{display:flex;gap:10px;flex-wrap:wrap}.stat{background:#f0f4fc;padding:12px 18px;border-radius:12px;flex:1;text-align:center}.stat b{font-size:24px;display:block}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:560px}th,td{border-bottom:1px solid #e4e9f4;padding:11px;text-align:right}th{background:#f0f4fc}footer{text-align:center;color:#65718b;font-size:12px;padding:20px}.hidden{display:none!important}.notice{background:#fff8e9;border:1px solid #f1d99c;border-radius:12px;padding:10px 14px;color:#73521b;font-size:13px;margin-top:12px}
+</style>
 </head>
 <body>
-  <h1>⭐ تألّقي ⭐</h1>
-  <h2>من نجمة الحصة؟</h2>
-  <p>منصة تفاعلية لتحفيز المشاركة الصفية</p>
-  <p>مادة البحث ومصادر المعلومات</p>
-  <p>إعداد وتصميم المعلمة: عفاف الخزاعي</p>
-  <p>ثانوية خولة بنت اليمان | 1448هـ</p>
-</body>
-</html>
+<header><h1>⭐ تألّقي | من نجمة الحصة؟ ⭐</h1><p>مادة البحث ومصادر المعلومات • ثانوية خولة بنت اليمان • 1448هـ</p><p>إعداد وتصميم المعلمة: عفاف الخزاعي</p></header>
+<main class="wrap">
+<section class="panel"><div class="controls"><div><label for="classSelect">اختاري الفصل</label><select id="classSelect"><option value="1">ثالث / 1</option><option value="2">ثالث / 2</option><option value="3">ثالث / 3</option><option value="4">ثالث / 4</option><option value="5">ثالث / 5</option></select></div><div><label for="points">درجة النجمة</label><select id="points"><option value="1">درجة واحدة</option><option value="2">درجتان</option><option value="3">3 درجات</option><option value="5">5 درجات</option></select></div></div><div class="stats" style="margin-top:16px"><div class="stat">عدد الطالبات<b id="studentCount">0</b></div><div class="stat">نجوم الفصل<b id="starsCount">0</b></div><div class="stat">المتبقي في السحب<b id="remainingCount">0</b></div></div></section>
+<section class="panel"><h2>🌟 سحب نجمة الحصة</h2><div class="stage"><div class="hint">من ستكون نجمة اليوم؟</div><div class="name" id="pickedName" aria-live="polite">جاهزات للتألّق؟</div></div><div class="actions"><button id="draw">🎲 ابدئي السحب</button><button id="award" class="gold" disabled>⭐ تستحق النجمة</button><button id="encourage" class="pink" disabled>💗 فرصة قادمة</button><button id="resetDraw" class="soft">إعادة دورة السحب</button></div><div id="message" class="message" aria-live="polite"></div><p class="muted">السحب عشوائي دون تكرار خلال الدورة. الدرجة تُمنح بناءً على المشاركة الفعلية، وليس الحظ. بعد انتهاء جميع الأسماء تبدأ دورة جديدة.</p></section>
+<div class="row"><section class="panel"><h2>📝 إدارة أسماء الطالبات</h2><p class="muted">اكتبي اسم كل طالبة في سطر مستقل. تُحفظ الأسماء على هذا المتصفح فقط، ولا تُرفع إلى GitHub.</p><textarea id="names" placeholder="اسم الطالبة الأولى&#10;اسم الطالبة الثانية"></textarea><div class="actions" style="margin-top:10px"><button id="saveNames">حفظ أسماء الفصل</button><button id="clearNames" class="danger">مسح أسماء الفصل</button></div></section><section class="panel"><h2>💾 حفظ سجل الترم</h2><p class="muted">يمكنك حفظ نسخة احتياطية لجميع الفصول واستعادتها على جهاز آخر. ملف النسخة يحتوي على أسماء الطالبات ودرجاتهن؛ احفظيه في مكان خاص.</p><div class="actions"><button id="backup">تنزيل نسخة احتياطية JSON</button><button id="exportCsv" class="soft">تصدير سجل الفصل CSV</button><button id="restore" class="soft">استعادة نسخة احتياطية</button><input id="restoreFile" type="file" accept=".json,application/json" class="hidden"></div><div class="notice">تنبيه: السجل محلي في المتصفح، وليس حسابًا محميًا أو مزامنة سحابية. لا تستخدمي جهازًا مشتركًا، وخذي نسخة احتياطية أسبوعيًا.</div></section></div>
+<section class="panel"><h2>🏆 سجل الفصل طوال الترم</h2><div class="tablewrap"><table><thead><tr><th>الطالبة</th><th>النجمات</th><th>الدرجات</th><th>فرص قادمة</th><th>آخر مشاركة</th></tr></thead><tbody id="records"></tbody></table></div><div class="actions" style="margin-top:16px"><button id="undo" class="soft">تراجع عن آخر نتيجة</button><button id="resetScores" class="danger">مسح سجل الفصل (بتأكيد)</button></div></section>
+</main><footer>تألّقي • تصميم المعلمة: عفاف الخزاعي</footer>
+<script>
+'use strict';
+const KEY='taalaqi_1448_v1';
+const $=id=>document.getElementById(id);
+const blank=()=>({names:[],remaining:[],events:[]});
+function fresh(){return {version:1,classes:{'1':blank(),'2':blank(),'3':blank(),'4':blank(),'5':blank()}}}
+function valid(v){return v&&v.version===1&&v.classes&&[1,2,3,4,5].every(k=>{let c=v.classes[k];return c&&Array.isArray(c.names)&&Array.isArray(c.remaining)&&Array.isArray(c.events)&&c.names.every(x=>typeof x==='string')&&c.remaining.every(x=>typeof x==='string')&&c.events.every(e=>e&&typeof e.name==='string'&&['star','next'].includes(e.type)&&Number.isFinite(e.points)&&typeof e.date==='string')})}
+let state;try{let saved=JSON.parse(localStorage.getItem(KEY));state=valid(saved)?saved:fresh()}catch{state=fresh()}
+let selected=null,busy=false;
+const classId=()=> $('classSelect').value;
+const current=()=>state.classes[classId()];
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){alert('تعذّر حفظ البيانات في المتصفح. صدّري نسخة احتياطية الآن.')}}
+function cleanNames(text){return [...new Set(text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean))]}
+function totals(name){const ev=current().events.filter(e=>e.name===name);return {stars:ev.filter(e=>e.type==='star').length,points:ev.reduce((s,e)=>s+(e.type==='star'?e.points:0),0),next:ev.filter(e=>e.type==='next').length,last:ev.length?ev[ev.length-1].date.slice(0,10):'—'}}
+function render(){let c=current();$('studentCount').textContent=c.names.length;$('starsCount').textContent=c.events.filter(e=>e.type==='star').length;$('remainingCount').textContent=c.remaining.length;$('records').replaceChildren();for(let n of c.names){let t=totals(n),tr=document.createElement('tr');for(let value of [n,t.stars,t.points,t.next,t.last]){let td=document.createElement('td');td.textContent=value;tr.append(td)}$('records').append(tr)}if(!c.names.length){let tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=5;td.textContent='أضيفي أسماء طالبات الفصل للبدء';tr.append(td);$('records').append(tr)}$('draw').disabled=!c.names.length||busy;$('award').disabled=!selected||busy;$('encourage').disabled=!selected||busy;$('resetDraw').disabled=!c.names.length||busy}
+function clearSelection(){selected=null;$('pickedName').textContent='جاهزات للتألّق؟';$('message').textContent='';render()}
+$('classSelect').addEventListener('change',()=>{$('names').value=current().names.join('\n');clearSelection()});
+$('saveNames').onclick=()=>{let c=current(),next=cleanNames($('names').value);if(!next.length){alert('أدخلي اسمًا واحدًا على الأقل');return}if(c.events.length&&!confirm('سيتم تحديث القائمة، وستبقى النتائج السابقة محفوظة. متابعة؟'))return;c.names=next;c.remaining=c.remaining.filter(n=>next.includes(n));for(let n of next)if(!c.remaining.includes(n))c.remaining.push(n);persist();clearSelection();alert('تم حفظ الأسماء لهذا الفصل')};
+$('clearNames').onclick=()=>{if(!confirm('مسح الأسماء وسجل هذا الفصل بالكامل؟ لا يمكن التراجع إلا بنسخة احتياطية.'))return;state.classes[classId()]=blank();persist();$('names').value='';clearSelection()};
+$('draw').onclick=()=>{let c=current();if(!c.names.length||busy)return;if(!c.remaining.length)c.remaining=[...c.names];busy=true;selected=null;$('message').textContent='';render();let ticks=0;let timer=setInterval(()=>{let pool=c.remaining;$('pickedName').textContent=pool[Math.floor(Math.random()*pool.length)];if(++ticks>=16){clearInterval(timer);let index=Math.floor(Math.random()*c.remaining.length);selected=c.remaining.splice(index,1)[0];$('pickedName').textContent=selected;busy=false;persist();render()}},85)};
+function finish(type){if(!selected)return;let n=selected;current().events.push({name:n,type,points:type==='star'?Number($('points').value):0,date:new Date().toISOString()});persist();$('message').textContent=type==='star'?'🏆 مبروك! أنتِ نجمة الحصة! ⭐':'💗 نجمتك تنتظركِ في الحصة القادمة!';selected=null;render()}
+$('award').onclick=()=>finish('star');$('encourage').onclick=()=>finish('next');
+$('resetDraw').onclick=()=>{if(!current().names.length||!confirm('بدء دورة سحب جديدة لهذا الفصل؟ لن تُمسح النجمات.'))return;current().remaining=[...current().names];persist();clearSelection()};
+$('undo').onclick=()=>{let c=current();if(!c.events.length){alert('لا توجد نتيجة للتراجع عنها');return}if(!confirm('التراجع عن آخر نتيجة محفوظة لهذا الفصل؟'))return;c.events.pop();persist();clearSelection()};
+$('resetScores').onclick=()=>{if(!confirm('مسح كل نجمات ودرجات ومحاولات هذا الفصل طوال الترم؟'))return;current().events=[];persist();clearSelection()};
+function download(filename,text,mime){let blob=new Blob([text],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+$('backup').onclick=()=>download('taalaqi-backup-1448-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(state,null,2),'application/json');
+$('exportCsv').onclick=()=>{let rows=[['الفصل','الطالبة','النجمات','الدرجات','فرص قادمة','آخر مشاركة'],...current().names.map(n=>{let t=totals(n);return ['ثالث/'+classId(),n,t.stars,t.points,t.next,t.last]})];let csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');download('taalaqi-class-'+classId()+'.csv',csv,'text/csv;charset=utf-8')};
+$('restore').onclick=()=>$('restoreFile').click();
+$('restoreFile').onchange=async e=>{let file=e.target.files[0];if(!file)return;try{let obj=JSON.parse(await file.text());if(!valid(obj))throw Error('صيغة النسخة غير متوافقة');if(!confirm('ستُستبدل كل بيانات الفصول الخمسة بالنسخة المختارة. متابعة؟'))return;state=obj;persist();$('names').value=current().names.join('\n');clearSelection();alert('تمت الاستعادة')}catch(err){alert('تعذّرت الاستعادة: '+err.message)}finally{e.target.value=''}};
+$('names').value=current().names.join('\n');render();
+</script>
+</body></html>
